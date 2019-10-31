@@ -15,6 +15,7 @@ echo "java -jar /home/rcf-proj3/sm3/akarlsbe/mixcr-3.0.11 assemblePartial ${line
 echo "java -jar /home/rcf-proj3/sm3/akarlsbe/mixcr-3.0.11 assemble ${line}_alignments_rescued_2.vdjca ${line}_clones.clns" >> run.mixcr.rna_seq.${line}.sh
 echo "java -jar /home/rcf-proj3/sm3/akarlsbe/mixcr-3.0.11 exportClones ${line}_clones.clns ${line}_clones.txt" >> run.mixcr.rna_seq.${line}.sh
 
-qsub -cwd -V -N mixcr -l h_data=16G,highp,time=24:00:00 run.mixcr.rna_seq.${line}.sh
+
+sbatch run.mixcr.rna_seq.${line}.sh
 
 done<samples.txt
