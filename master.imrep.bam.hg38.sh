@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 ls *bam | awk -F ".bam" '{print $1}' >samples.txt
