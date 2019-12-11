@@ -9,7 +9,6 @@ AUTHOR="Serghei Mangul"
 ################################################################
 
 toolName="hisat2.tuned"
-
 index="/home/rcf-proj/sm3/akarlsbe/grch38/genome"
 samtools=/usr/usc/samtools/1.9/bin/samtools
 toolPath=/home/rcf-proj/sm3/akarlsbe/anaconda2/bin/hisat2

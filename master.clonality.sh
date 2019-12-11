@@ -10,9 +10,7 @@ echo "python /home/rcf-proj/sm3/akarlsbe/code/imrep/clonality.py ${line}.cdr3 ${
 
 echo "ls>done.txt" >> run.clonality.${line}.sh
 
-sbatch run.clonality.${line}.sh
-
-# sbatch run.clonality.${line}.sh -p scavenge
+sbatch run.clonality.${line}.sh #-p scavenge
 
 done<samples.txt
 

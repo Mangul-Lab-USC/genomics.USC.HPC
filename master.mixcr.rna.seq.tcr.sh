@@ -18,6 +18,6 @@ echo "java -jar /home/rcf-proj3/sm3/akarlsbe/mixcr-3.0.11 assemble ${line}_align
 echo "java -jar /home/rcf-proj3/sm3/akarlsbe/mixcr-3.0.11 exportClones ${line}_clones.clns ${line}_clones.txt" >> run.mixcr.rna_seq.${line}.sh
 echo "ls>done.txt" >> run.mixcr.rna_seq.${line}.sh
 
-sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.mixcr.rna_seq.${line}.sh -p scavenge
+sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.mixcr.rna_seq.${line}.sh #-p scavenge
 
 done<samples.txt
