@@ -38,11 +38,8 @@ echo "---------------------------------------"
 echo "---------------------------------------"
 
 # STEP 0 - create output directory if it does not exist
-echo "mkdir ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}"
+mkdir $outdir/subsample_num_reads_${num_reads}_seed_$seed
 
-echo "---------------------------------------"
-echo "---------------------------------------"
-echo "---------------------------------------"
 
 # STEP 1 -  generate list of files to subsample
 ls *fastq.gz | awk -F ".fastq.gz" '{print $1}' >samples.txt
@@ -60,6 +57,6 @@ echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq
 
 echo "ls>done.txt" >> run.subsample.${line}.sh
 
-sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.subsample.${line}.sh #-p scavenge
+# sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.subsample.${line}.sh #-p scavenge
 
 done<samples.txt
