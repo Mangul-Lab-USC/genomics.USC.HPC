@@ -33,9 +33,16 @@ echo "you can check by counting the number of lines in the fastq.gz file and div
 echo "example usage: within directory containing fastq.gz files:"
 echo "###./master.subsample.fastq.gz.sh 10000000 100 /staging/sm3/akarlsbe/scott###"
 
+echo "---------------------------------------"
+echo "---------------------------------------"
+echo "---------------------------------------"
+
 # STEP 0 - create output directory if it does not exist
 echo "mkdir ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}"
 
+echo "---------------------------------------"
+echo "---------------------------------------"
+echo "---------------------------------------"
 
 # STEP 1 -  generate list of files to subsample
 ls *fastq.gz | awk -F ".fastq.gz" '{print $1}' >samples.txt
@@ -49,7 +56,7 @@ echo "#!/bin/sh" > run.subsample.${line}.sh
 
 echo "/home/rcf-proj/sm3/akarlsbe/code/seqtk/seqtk sample -s${seed} ${line}.fastq.gz ${num_reads} > ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq" >>run.subsample.${line}.sh
 
-echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq"
+echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq" >>run.subsample.${line}.sh
 
 echo "ls>done.txt" >> run.subsample.${line}.sh
 
