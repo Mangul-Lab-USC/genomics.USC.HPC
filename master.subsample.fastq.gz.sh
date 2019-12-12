@@ -13,7 +13,9 @@ if [ $# -lt 3 ]
     echo "2 <seed>   - random seed"
     echo "3 <outdir>   - specify full path to dir to save the output"
     echo "--------------------------------------"
+    echo "example usage: within directory containing fastq.gz files:"
     echo "###./master.subsample.fastq.gz.sh 10000000 100 /staging/sm3/akarlsbe/scott###"
+    echo "--------------------------------------"
     exit 1
     fi
 
