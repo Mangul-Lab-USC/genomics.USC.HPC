@@ -44,7 +44,7 @@ echo "---------------------------------------"
 echo "---------------------------------------"
 
 # STEP 0 - create output directory if it does not exist
-mkdir $outdir/subsample_num_reads_${num_reads}_seed_$seed
+mkdir $outdir/subsample_num_reads_${num_reads}_seed_$seed/combined_lanes_fastq
 
 
 # STEP 1 -  generate list of files to subsample
@@ -57,9 +57,9 @@ do
 
 echo "#!/bin/sh" > run.subsample.${line}.sh
 
-echo "/home/rcf-proj/sm3/akarlsbe/code/seqtk/seqtk sample -s${seed} ${line}.fastq.gz ${num_reads} > ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq" >>run.subsample.${line}.sh
+echo "/home/rcf-proj/sm3/akarlsbe/code/seqtk/seqtk sample -s${seed} ${line}.fastq.gz ${num_reads} > ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/combined_lanes_fastq/${line}.fastq" >>run.subsample.${line}.sh
 
-echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq" >>run.subsample.${line}.sh
+echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/combined_lanes_fastq/${line}.fastq" >>run.subsample.${line}.sh
 
 echo "ls>done.txt" >> run.subsample.${line}.sh
 
