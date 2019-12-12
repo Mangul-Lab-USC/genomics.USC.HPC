@@ -15,6 +15,7 @@ if [ $# -lt 3 ]
     echo "--------------------------------------"
     echo "example usage: within directory containing fastq.gz files:"
     echo "###./master.subsample.fastq.gz.sh 3000000 100 /staging/sm3/akarlsbe/scott###"
+    echo "this will randomly take 3 million reads from all fastq files using the same seed. Even Random Distribution for R1 and R2"
     echo "--------------------------------------"
     exit 1
     fi
@@ -36,9 +37,6 @@ echo "subsampling more than the available number of reads will result in a copy 
 echo "To avoid misrepresentation, make sure you are subsampling less than the number of reads available"
 echo "you can check by counting the number of lines in the fastq.gz file and dividing by 4. That is the max number of reads available."
 echo "                                       "
-echo "                                       "
-echo "example usage: within directory containing fastq.gz files:"
-echo "###./master.subsample.fastq.gz.sh 10000000 100 /staging/sm3/akarlsbe/scott###"
 echo "                                       "
 echo "                                       "
 echo "---------------------------------------"
