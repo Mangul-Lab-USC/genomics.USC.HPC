@@ -27,12 +27,20 @@ outdir=$3
 
 
 # message
+echo "---------------------------------------"
+echo "---------------------------------------"
+echo "---------------------------------------"
+echo "                                       "
+echo "                                       "
 echo "subsampling more than the available number of reads will result in a copy of the fastq.gz file."
 echo "To avoid misrepresentation, make sure you are subsampling less than the number of reads available"
 echo "you can check by counting the number of lines in the fastq.gz file and dividing by 4. That is the max number of reads available."
+echo "                                       "
+echo "                                       "
 echo "example usage: within directory containing fastq.gz files:"
 echo "###./master.subsample.fastq.gz.sh 10000000 100 /staging/sm3/akarlsbe/scott###"
-
+echo "                                       "
+echo "                                       "
 echo "---------------------------------------"
 echo "---------------------------------------"
 echo "---------------------------------------"
@@ -57,6 +65,6 @@ echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/${line}.fastq
 
 echo "ls>done.txt" >> run.subsample.${line}.sh
 
-# sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.subsample.${line}.sh #-p scavenge
+sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.subsample.${line}.sh #-p scavenge
 
 done<samples.txt
