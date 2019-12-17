@@ -16,15 +16,31 @@ done<samples.txt
 
 
 
-#command to combine the TCRA.cdr3.FREQ..csv files into one csv for all clonality samples.
+#command to combine the summary.cdr3.txt files into one csv for all clonality samples.
 #echo "SAMPLE,nIGH,nIGK,nIGL,nTCRA,nTCRB,nTCRD,nTCRG,loadIGH,loadIGK,loadIGL,loadTCRA,loadTCRB,loadTCRD,loadTCRG,alphaIGH,alphaIGK,alphaIGL,alphaTCRA,alphaTCRB,alphaTCRD,alphaTCRG" > combined_clonality.csv
 #tail -n +2 -q */*summary.cdr3.txt >> combined_clonality.csv
 
 
-#command to combine the summary.cdr3.txt files into one csv for all clonality samples.
+#command to combine the TCRA.cdr3.FREQ..csv files into one csv for all clonality samples.
 # grep "" */TCRA.cdr3.FREQ..csv | sed 's/:/,/' | awk -F "_" '{print $2"_"$3}' >t1
 # grep "" */TCRA.cdr3.FREQ..csv | sed 's/:/,/' | awk -F "," '{print $2","$3","$4}' >t2
 # paste t1 t2 | awk '{print $1","$2}' > t3
 # grep -v CDR3 t3 > t4
 # echo "SAMPLE,CDR3,count,relative.frequency" > t5 
 # cat t5 t4 > combined_cdr3_frequencies.csv
+
+
+# # command to combine the TCRA.cdr3..csv files into one csv for all samples.
+# grep "" */TCRA.cdr3..csv | sed 's/:/,/' | awk -F "_" '{print $2"_"$3}' >t1
+# grep "" */TCRA.cdr3..csv | sed 's/:/,/' | awk -F "," '{print $2}' >t2
+# paste t1 t2 | awk '{print $1","$2}' > t3
+# echo "SAMPLE,CDR3_sequence" > t4
+# cat t4 t3 > combined_cdr3_sequences.csv
+
+
+# # command to combine the TCRA.VJ..csv files into one csv for all samples.
+# grep "" */TCRA.VJ..csv  | sed 's/:/,/' | awk -F "_" '{print $2"_"$3}' >t1
+# grep "" */TCRA.VJ..csv  | sed 's/:/,/' | awk -F "," '{print $2}' >t2
+# paste t1 t2 | awk '{print $1","$2}' > t3
+# echo "SAMPLE,VJ_sequence" > t4
+# cat t4 t3 > combined_VJ_sequences.csv
