@@ -22,9 +22,9 @@ done<samples.txt
 
 
 #command to combine the summary.cdr3.txt files into one csv for all clonality samples.
-grep "" */TCRA.cdr3.FREQ..csv | sed 's/:/,/' | awk -F "_" '{print $2"_"$3}' >t1
-grep "" */TCRA.cdr3.FREQ..csv | sed 's/:/,/' | awk -F "," '{print $2","$3","$4}' >t2
-paste t1 t2 | awk '{print $1","$2}' > t3
-grep -v CDR3 t3 > t4
-echo "SAMPLE,CDR3,count,relative.frequency" > t5 
-cat t5 t4 > combined_cdr3_frequencies.csv
+# grep "" */TCRA.cdr3.FREQ..csv | sed 's/:/,/' | awk -F "_" '{print $2"_"$3}' >t1
+# grep "" */TCRA.cdr3.FREQ..csv | sed 's/:/,/' | awk -F "," '{print $2","$3","$4}' >t2
+# paste t1 t2 | awk '{print $1","$2}' > t3
+# grep -v CDR3 t3 > t4
+# echo "SAMPLE,CDR3,count,relative.frequency" > t5 
+# cat t5 t4 > combined_cdr3_frequencies.csv
