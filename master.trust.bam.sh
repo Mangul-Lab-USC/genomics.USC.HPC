@@ -6,7 +6,6 @@
 
 
 
-
 # TRUST INSTALLATION NOTES USC HPC
 
 # Depends on python version 2.7
