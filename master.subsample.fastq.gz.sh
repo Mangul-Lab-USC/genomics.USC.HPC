@@ -63,6 +63,6 @@ echo "gzip ${outdir}/subsample_num_reads_${num_reads}_seed_${seed}/combined_lane
 
 echo "ls>done.txt" >> run.subsample.${line}.sh
 
-sbatch --ntasks=16 --mem-per-cpu=16G --time=24:00:00 run.subsample.${line}.sh #-p scavenge
+sbatch --ntasks=4 --mem-per-cpu=16G --time=24:00:00 run.subsample.${line}.sh #-p scavenge
 
 done<samples.txt
