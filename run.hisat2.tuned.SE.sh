@@ -12,9 +12,9 @@ toolName="hisat2.tuned"
 # Human
 # index="/home/rcf-proj/sm3/akarlsbe/grch38/genome"
 # Mouse genome
-index="/scratch/akarlsbe/reference_files/mm10"
+index="/scratch/akarlsbe/reference_files/mouse_genome_10/mm10"
 # Mouse vdj
-# index="/scratch/akarlsbe/reference_files/mouse_vdj_ref"
+# index="/scratch/akarlsbe/reference_files/mouse_vdj_ref/mouse_vdj_ref"
 samtools=/usr/usc/samtools/1.9/bin/samtools
 toolPath=/home/rcf-proj/sm3/akarlsbe/anaconda2/bin/hisat2
 
