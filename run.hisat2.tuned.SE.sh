@@ -9,12 +9,14 @@ AUTHOR="Serghei Mangul"
 ################################################################
 
 toolName="hisat2.tuned"
-index="/home/rcf-proj/sm3/akarlsbe/grch38/genome"
+# Human
+# index="/home/rcf-proj/sm3/akarlsbe/grch38/genome"
+# Mouse genome
+index="/scratch/akarlsbe/reference_files/mm10"
+# Mouse vdj
+# index="/scratch/akarlsbe/reference_files/mouse_vdj_ref"
 samtools=/usr/usc/samtools/1.9/bin/samtools
 toolPath=/home/rcf-proj/sm3/akarlsbe/anaconda2/bin/hisat2
-
-# toolPath=/u/home/s/serghei/project/anaconda2/bin/hisat2
-
 
 
 if [ $# -lt 2 ]
